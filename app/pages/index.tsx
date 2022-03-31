@@ -1,11 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import Head from "next/head";
-import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import Link from "next/link";
 import Web3modal from "web3modal";
 import { providers, Contract } from "ethers";
-import { useGlobalContext } from "../context";
 import { WHITELIST_CONTRACT_ADDRESS, abi } from "../constants";
 import { Web3Provider } from "@ethersproject/providers";
 
