@@ -4,7 +4,6 @@ import styles from "../styles/Home.module.css";
 import Web3modal from "web3modal";
 import { providers, Contract } from "ethers";
 import { WHITELIST_CONTRACT_ADDRESS, abi } from "../constants";
-import { Web3Provider } from "@ethersproject/providers";
 
 export default function Home() {
   const [walletConnected, setWalletConnected] = useState(false);
@@ -18,6 +17,7 @@ export default function Home() {
   const web3ModalRef = useRef();
 
   const getProviderOrSigner = async (needSigner = false) => {
+    // @ts-ignore
     const provider = await web3ModalRef.current.connect();
     const web3provider = new providers.Web3Provider(provider);
 
@@ -66,7 +66,7 @@ export default function Home() {
         provider
       );
       const _numberOfWhitelisted =
-        await whitelistContract.numAddressWhitelisted();
+        await whitelistContract.numAddressesWhitelisted();
       setNumberOfWhitelisted(_numberOfWhitelisted);
     } catch (e) {
       console.error(e);
@@ -80,6 +80,7 @@ export default function Home() {
         abi,
         signer
       );
+      // @ts-ignore
       const address = await signer.getAddress();
 
       const _joinedWhitelsit = await whitelsitContract.whitelistedAddresses(
@@ -126,6 +127,7 @@ export default function Home() {
   };
   useEffect(() => {
     if (!walletConnected) {
+      // @ts-ignore
       web3ModalRef?.current = new Web3modal({
         network: "rinkeby",
         providerOptions: {},
