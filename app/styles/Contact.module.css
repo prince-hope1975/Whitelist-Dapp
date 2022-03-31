@@ -1,0 +1,71 @@
+.main{
+    display: grid;
+    place-content: center;
+    min-height: 70vh;
+}
+.form{
+    margin-bottom: 20rem;
+    margin-top: 10rem;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+     min-height: 20rem;
+     border: 3px solid white;
+    width: clamp(300px, calc(70vw + 1px), 450px);
+    border-radius: 50px;
+
+
+}
+.form input[type="text"],
+.form input[type="email"],
+.form textarea {
+    font-size: 1.1rem;
+    color:white;
+   min-width: 100%;
+    padding: .5rem;
+    background: none;
+    border: none;
+    border-bottom: 3px solid wheat;
+    
+}
+.form textarea{
+    resize: none
+} 
+.form input[type="submit"]{
+    width: 50%;
+    margin: auto;
+    font-weight: bolder;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    border: none;
+    color: purple;
+    padding: .2rem
+}
+
+.form input:focus,
+.form textarea:focus {
+    outline: none;
+}
+.form input::placeholder,
+.form textarea::placeholder{
+    color: hsl(39, 77%, 73%);
+    font-size: 1.2rem;
+}
+
+.squiggle1,
+.squiggle2{
+    position:absolute;
+    height: 20rem;
+    width: 40rem;
+    color:white;
+    z-index:-1;
+}
+.squiggle1{
+    right: -15rem;
+    top: -1.5rem ;
+}
+.squiggle2{
+    bottom: 5rem;
+    left:-14rem
+}

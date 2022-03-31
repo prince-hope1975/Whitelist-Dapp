@@ -1,0 +1,27 @@
+.container{
+    display: grid;
+    position: relative;
+    height: 100vh;
+}
+.main {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-clr);
+    text-align: center;
+}
+.logo{
+    margin-top: 7rem;
+}
+.blob{
+    height: 100%;
+    overflow-y: scroll;
+    background: hsl(0, 2%, 90%);
+    padding: 2rem 1.5rem 10rem 1.5rem;
+    margin-top: 1rem;
+}
+.blob p{
+    color: hsl(0, 0%, 40%);
+}
