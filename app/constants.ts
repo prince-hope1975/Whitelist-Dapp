@@ -1,4 +1,4 @@
-export const NFT_CONTRACT_ADDRESS = "0x89431cD106A5F4396ef0127748CfF241a47c8955";
+export const NFT_CONTRACT_ADDRESS = "0xDd949233533b4A2dbf140a5968A1bB1542b7ccef";
 // export const WHITELIST_CONTRACT_ADDRESS = "0xdcc9eD0BfFc02100741E230DB8F5caDdfCdc7A38";
 export const abi = [
   {
@@ -468,7 +468,7 @@ export const abi = [
   },
   {
     inputs: [],
-    name: "tokenIDs",
+    name: "tokenIds",
     outputs: [
       {
         internalType: "uint256",
