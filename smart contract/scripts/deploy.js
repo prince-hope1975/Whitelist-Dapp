@@ -1,13 +1,26 @@
-const { ethers } = require("ethers");
+const { ethers } = require("hardhat");
+require("dotenv").config({ path: ".env" });
+
+const { WHITELSIT_CONTRACT_ADDRESS, METADATA_URL } = require("../constants");
 
 async function main() {
-  const whitelistContract = await hre.ethers.getContractFactory("Whitelist");
+  const whitelistContract = WHITELSIT_CONTRACT_ADDRESS;
 
-  const deployedWhitelistContract = await whitelistContract.deploy(10);
+  const memtadataURL = METADATA_URL;
 
-  await deployedWhitelistContract.deployed();
+  const cryptoDevContract = await ethers.getContractFactory("CryptoDevs");
 
-  console.log("Whitelist Contract Address", deployedWhitelistContract.address);
+  const deployedCryptoDevsContract = await cryptoDevContract.deploy(
+    memtadataURL,
+    whitelistContract
+  );
+
+  await deployedCryptoDevsContract.deployed();
+
+  console.log(
+    "Crypto Devs Contract Address: ",
+    deployedCryptoDevsContract.address
+  );
 }
 
 main()
